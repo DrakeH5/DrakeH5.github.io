@@ -56,6 +56,6 @@ setInterval(function(){loadAnimationDone=true;},6300)
 
 document.body.onmousemove = function(evt) {
     if(loadAnimationDone!=false){
-      mesh.rotation.z=-(evt.clientX-window.innerWidth/2)/(window.innerWidth);
+      mesh.rotation.z-=evt.movementX/500;
     }
   };
