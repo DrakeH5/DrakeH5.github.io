@@ -7,10 +7,17 @@
             <button>CONTACT</button>
         </div>
 
-        <div id="centerDiv"><center>
-            <h1>Drake Hughes</h1>
-            <p>Cringy Description</p>
-        </center></div>
+        <div>
+            <div id="centerDiv"><center>
+                <h1>Drake Hughes</h1>
+                <p>Cringy Description</p>
+            </center></div>
+
+            <div id="page2"><center>
+                <h1>MORE CONTENT</h1>
+            </center></div>
+            
+        </div>
         
         <style>
             body {
@@ -22,6 +29,8 @@
                 padding: 1em;
                 display: flex;
                 justify-content: space-between;
+                position: fixed;
+                width: 98%;
             }
             button {
                 opacity: 0.3;
@@ -35,6 +44,16 @@
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
+            }
+            canvas {
+                position: fixed;
+                z-index: -1;
+            }
+            #page2 {
+                position: absolute;
+                top: 175%;
+                left: 50%;
+                transform: translateX(-50%);
             }
         </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
