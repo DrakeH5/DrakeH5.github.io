@@ -41,6 +41,7 @@ var render = function() {
   if(Math.abs(mesh.position.z) > 3) {meshVeolocity=meshVeolocity*-1;} //if the box is past either -3 or 3 it changes the box's direction
   mesh.position.z += meshVeolocity; //moves box on z axis
 */
+  mesh.rotation.z=-window.pageYOffset/1000
   renderer.render(scene, camera); //just render (show) everything on our canvas
 }
 
@@ -54,8 +55,8 @@ this.tl.to(this.mesh.position, 2, {z: -3, ease: Expo.easeOut}); //using the time
 this.tl.to(this.mesh.rotation, 3, {x: 45, ease: Expo.easeOut}); //using the timeline, we rotate our box over 3 second on the x axis by 45 degrees. We also make it an exponintial ease out so it does it gradualy
 setInterval(function(){loadAnimationDone=true;},6300)
 
-document.body.onmousemove = function(evt) {
+/*document.body.onwheel = function(evt) {
     if(loadAnimationDone!=false){
-      mesh.rotation.z-=evt.movementX/500;
+      mesh.rotation.z-=evt.deltaY/500;window.pageYOffset
     }
-  };
+  };*/
