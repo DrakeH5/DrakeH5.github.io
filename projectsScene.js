@@ -17,19 +17,6 @@ window.addEventListener('resize', () => { //when the page is resized
 })
 
 
-var material = new THREE.MeshBasicMaterial();
-
-const drawingCanvas = document.getElementById( 'canvas' );
-				const drawingContext = drawingCanvas.getContext( '2d' );
-
-				// draw white background
-
-				drawingContext.fillStyle = 'lightblue';
-				drawingContext.fillRect( 0, 0, 128, 128 );
-
-				// set canvas as material.map (this could be done to any map, bump, displacement etc.)
-
-				material.map = new THREE.CanvasTexture( drawingCanvas );
 
 var numberOfProjects = 10
 var radius = 20;
