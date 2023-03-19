@@ -31,17 +31,16 @@ for(var i=0; i<numberOfProjects; i++){
 }
 
 
-var geometry = new THREE.BoxGeometry(100, 1, 100); //creates box (width, height, depth)
-var groundMaterial = new THREE.MeshLambertMaterial({color: "lightgreen"}); //creates material
+var geometry = new THREE.BoxGeometry(500, 5, 500); //creates box (width, height, depth)
+var groundMaterial = new THREE.MeshLambertMaterial({color: "green"}); //creates material
 var ground = new THREE.Mesh(geometry, groundMaterial); //creates a mesh out of our box and material
 ground.position.y=-8
 scene.add(ground); //adds our mesh to the scene
 
 
 
-var light = new THREE.PointLight(0xFFFFFF, 5, 500); //creates a light (color, intensity, distance)
-light.position.set(0, 0, 0); //sets light position (x, y, z)
-scene.add(light); //add the light to the scene
+const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
+scene.add( light );
 
 
 
