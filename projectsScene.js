@@ -4,7 +4,7 @@ var scene = new THREE.Scene(); //created a three.js scene
 var camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000) //create a camera
 
 var renderer = new THREE.WebGLRenderer({antialias: true}); //create renderer
-renderer.setClearColor("black"); //essentially a background color
+renderer.setClearColor("lightblue"); //essentially a background color
 renderer.setSize(window.innerWidth,window.innerHeight); //set renderer size to size of the page
 
 document.body.appendChild(renderer.domElement); //creates a canvas with our render's specifications
@@ -19,7 +19,7 @@ window.addEventListener('resize', () => { //when the page is resized
 
 
 var numberOfProjects = materials.length
-var radius = 20;
+var radius = 30;
 for(var i=0; i<numberOfProjects; i++){
     var geometry = new THREE.BoxGeometry(6, 10, 6); //creates box (width, height, depth)
     var mesh = new THREE.Mesh(geometry, materials[i]); //creates a mesh out of our box and material
@@ -45,7 +45,7 @@ scene.add(light); //add the light to the scene
 
 
 
-baseRotationRate = -0.002
+baseRotationRate = -0.005
 var render = function() {
   requestAnimationFrame(render);
   camera.rotation.y += baseRotationRate;

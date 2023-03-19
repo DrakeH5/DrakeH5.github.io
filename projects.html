@@ -1,11 +1,17 @@
 <html>
     <body>
-        <canvas id="canvas1" height="64" width="64"></canvas>
-        <canvas id="canvas2" height="64" width="64"></canvas>
+        <div id="materialCanvasesStyle">
+            <canvas id="canvas1" height="64" width="64"></canvas>
+            <canvas id="canvas2" height="64" width="64"></canvas>
+        </div>
         <style>
             body {
                 background-color: black;
                 overflow: hidden;
+            }
+            #materialCanvasesStyle {
+                z-index: -1;
+                position: absolute;
             }
         </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
