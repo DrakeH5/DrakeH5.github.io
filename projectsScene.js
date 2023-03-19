@@ -18,11 +18,11 @@ window.addEventListener('resize', () => { //when the page is resized
 
 
 
-var numberOfProjects = 10
+var numberOfProjects = materials.length
 var radius = 20;
 for(var i=0; i<numberOfProjects; i++){
     var geometry = new THREE.BoxGeometry(6, 10, 6); //creates box (width, height, depth)
-    var mesh = new THREE.Mesh(geometry, material); //creates a mesh out of our box and material
+    var mesh = new THREE.Mesh(geometry, materials[i]); //creates a mesh out of our box and material
     var theta = (i/numberOfProjects)*360;
     xPos = radius*Math.cos(theta);
     zPos = radius*Math.sin(theta)
