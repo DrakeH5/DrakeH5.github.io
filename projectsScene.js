@@ -32,12 +32,15 @@ for(var i=0; i<numberOfProjects; i++){
 }
 
 
-/*
-var geometry = new THREE.BoxGeometry(500, 5, 500); //creates box (width, height, depth)
-var groundMaterial = new THREE.MeshLambertMaterial({color: "green"}); //creates material
-var ground = new THREE.Mesh(geometry, groundMaterial); //creates a mesh out of our box and material
-ground.position.y=-8
-scene.add(ground); //adds our mesh to the scene*/
+
+groundPlatformRadius = 20;
+var groundPlatform = new THREE.Mesh(new THREE.CylinderGeometry(1, groundPlatformRadius, 1, 64), new THREE.MeshLambertMaterial({color: "black"})); 
+groundPlatform.position.y=-7
+scene.add(groundPlatform);
+var outergroundPlatform = new THREE.Mesh(new THREE.CylinderGeometry(1, groundPlatformRadius+1, 1, 64), new THREE.MeshLambertMaterial({color: "blue"})); 
+outergroundPlatform.position.y=-7.1
+scene.add(outergroundPlatform);
+
 
 var materialArray = [];
 /*let texture_lf = new THREE.TextureLoader().load("./mountainProjectSkybox/negx.jpg")
@@ -76,10 +79,10 @@ scene.add( light );
 
 
 
-baseRotationRate = -0.002
+baseRotationRate = -0.005
 var render = function() {
   requestAnimationFrame(render);
-  //camera.rotation.y += baseRotationRate;
+  camera.rotation.y += baseRotationRate;
   renderer.render(scene, camera); //just render (show) everything on our canvas
 }
 
@@ -90,32 +93,4 @@ render();
 document.body.onmousemove = function(evt) {
   camera.rotation.y-=evt.movementX/105;
   //if(Math.abs(camera.rotation.x)<1){camera.rotation.x-=evt.movementY/65;}else{camera.rotation.x-=(camera.rotation.x/Math.abs(camera.rotation.x))/100}
-};
-
-document.body.onkeydown = function (evt) {
-  if(evt.keyCode==38||evt.keyCode==87) { //forwards
-    var direction = new THREE.Vector3();
-    camera.getWorldDirection( direction );
-    camera.position.add( direction );
-    camera.position.add( direction );
-    camera.position.add( direction );
-    camera.position.add( direction );
-    camera.position.add( direction );
-    camera.position.add( direction );
-    camera.position.add( direction );
-    camera.position.add( direction );
-  }
-  if(evt.keyCode==40||evt.keyCode==83) { //backwards
-    var direction = new THREE.Vector3();
-    camera.getWorldDirection( direction );
-    camera.position.sub( direction );
-  }
-  if(evt.keyCode==32) { //jump
-    this.camera = camera;
-    this.camera.position.y+=1;
-  }
-  if(evt.keyCode==17) { //go down //control key
-    this.camera = camera;
-    this.camera.position.y-=1;
-  }
 };
