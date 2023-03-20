@@ -79,18 +79,27 @@ scene.add( light );
 
 
 
-baseRotationRate = -0.005
+baseRotationRate = -0.003
 var render = function() {
   requestAnimationFrame(render);
-  camera.rotation.y += baseRotationRate;
+  if(!mouseClicked){
+    camera.rotation.y += baseRotationRate;
+  }
   renderer.render(scene, camera); //just render (show) everything on our canvas
 }
 
 render();
 
 
-
-document.body.onmousemove = function(evt) {
-  camera.rotation.y-=evt.movementX/105;
-  //if(Math.abs(camera.rotation.x)<1){camera.rotation.x-=evt.movementY/65;}else{camera.rotation.x-=(camera.rotation.x/Math.abs(camera.rotation.x))/100}
-};
+var mouseClicked = false;
+document.body.onmousedown = function(evt) {
+  mouseClicked = true;
+}
+document.body.onmouseup = function(evt) {
+  mouseClicked = false;
+}
+document.body.onmousemove = function(event) {
+  if(mouseClicked==true){
+    camera.rotation.y += event.movementX/(window.innerWidth/2)
+  }
+}
