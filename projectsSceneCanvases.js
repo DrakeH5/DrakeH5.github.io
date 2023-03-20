@@ -1,7 +1,7 @@
 var material1 = new THREE.MeshBasicMaterial();
 const project1Canvas = document.getElementById( 'canvas1' );
 const project1CanvasCtx = project1Canvas.getContext( '2d' );
-project1CanvasCtx.fillStyle = 'red';
+project1CanvasCtx.fillStyle = 'lightblue';
 project1CanvasCtx.fillRect( 0, 0, 64, 64);
 project1CanvasCtx.fillStyle = 'black';
 project1CanvasCtx.font = "12px Arial";
