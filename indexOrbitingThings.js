@@ -5,6 +5,15 @@ var sphere = new THREE.Mesh(spheregeometry, spherematerial);
 sphere.position.set(0, -20, -10)
 scene.add(sphere); 
 
+
+
+var orbitalGeometry = new THREE.BoxGeometry(5, 3, 1);
+var orbital1 = new THREE.Mesh(orbitalGeometry, new THREE.MeshLambertMaterial({color: "blue"}));
+scene.add(orbital1); 
+
+
+
+
 var prevScroll = 0;
 var overScroll = 0;
 document.onscroll = function(){
@@ -20,4 +29,5 @@ document.onscroll = function(){
         overScroll += window.pageYOffset - prevScroll;
     }
     prevScroll = window.pageYOffset;
+    orbital1.position.set(8*Math.sin(window.pageYOffset/1000), sphere.position.y, 8*Math.cos(window.pageYOffset/1000) - 10)
 }
