@@ -1,6 +1,6 @@
 <html>
     <body>
-        <div id="materialCanvasesStyle">
+        <div id="materialCanvasesStyle" width="0">
             <canvas id="canvas1" height="64" width="64"></canvas>
             <canvas id="canvas2" height="64" width="64"></canvas>
         </div>
@@ -13,10 +13,27 @@
                 z-index: -1;
                 position: absolute;
             }
+            canvas {
+                position: relative;
+                right: 200%
+            }
         </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
         <script src="projectsSceneCanvases.js"></script>
         <script src="projectsScene.js"></script>
+        <script>
+            window.onload = function(){
+                var canvas = document.getElementById("threeJScanvas");
+                var i=100;
+                setInterval(function(){
+                    if(i>=0){
+                        canvas.style.position = "absolute";
+                        canvas.style.right = i*-1 + "%"
+                        i--
+                    }
+                },10)
+            }
+        </script>
     </body>
 </html>

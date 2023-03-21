@@ -1,22 +1,25 @@
 <html>
     <body>
+        <div id="bodyDiv">
 
-        <div id="taskbarDiv">
-            <button>HOME</button>
-            <a href="./projects.html"><button>PROJECTS</button><a>
-            <button>CONTACT</button>
-        </div>
+            <div id="taskbarDiv">
+                <button>HOME</button>
+                <button onclick="pageTransition('./projects.html')">PROJECTS</button>
+                <button>CONTACT</button>
+            </div>
 
-        <div>
-            <div id="centerDiv"><center>
-                <h1>Drake Hughes</h1>
-                <p>Cringy Description</p>
-            </center></div>
+            <div>
+                <div id="centerDiv"><center>
+                    <h1>Drake Hughes</h1>
+                    <p>Cringy Description</p>
+                </center></div>
 
-            <div id="page2"><center>
-                <h1>MORE CONTENT</h1>
-            </center></div>
-            
+                <div id="page2"><center>
+                    <h1>MORE CONTENT</h1>
+                </center></div>
+                
+            </div>
+
         </div>
         
         <style>
@@ -59,5 +62,22 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
         <script src="./backgroundScene.js"></script>
+        <script>
+            function pageTransition(pageTo){
+                var bodyDiv = document.getElementById("bodyDiv");
+                var canvas = document.getElementById("threeJScanvas");
+                var i = 0;
+                setInterval(function(){
+                    bodyDiv.style.position = "absolute";
+                    bodyDiv.style.left = i*-1 + "%"
+                    canvas.style.position = "relative";
+                    canvas.style.left = i*-1 + "%"
+                    i++;
+                }, 10)
+                setTimeout(function(){
+                    window.location.href = pageTo
+                }, 1100)
+            }
+        </script>
     </body>
 </html>

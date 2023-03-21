@@ -9,6 +9,7 @@ renderer.setClearColor("black"); //essentially a background color
 renderer.setSize(window.innerWidth,window.innerHeight); //set renderer size to size of the page
 
 document.body.appendChild(renderer.domElement); //creates a canvas with our render's specifications
+renderer.domElement.id = "threeJScanvas";
 
 window.addEventListener('resize', () => { //when the page is resized
   renderer.setSize(window.innerWidth,window.innerHeight); //resize the renderer accordingly
