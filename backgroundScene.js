@@ -42,7 +42,6 @@ var render = function() {
   if(Math.abs(mesh.position.z) > 3) {meshVeolocity=meshVeolocity*-1;} //if the box is past either -3 or 3 it changes the box's direction
   mesh.position.z += meshVeolocity; //moves box on z axis
 */
-  mesh.rotation.z=-window.pageYOffset/1000
   renderer.render(scene, camera); //just render (show) everything on our canvas
 }
 

@@ -13,11 +13,6 @@
                     <h1>Drake Hughes</h1>
                     <p>Cringy Description</p>
                 </center></div>
-
-                <div id="page2"><center>
-                    <h1>SKILLS</h1>
-                    <div id="skillsImages"></div>
-                </center></div>
                 
             </div>
 
@@ -27,7 +22,7 @@
             body {
                 background-color: black;
                 overflow-x: hidden;
-                height: 300%
+                height: 1000%
             }
             #taskbarDiv {
                 background-color: rgb(28, 26, 26);
@@ -54,21 +49,11 @@
                 position: fixed;
                 z-index: -1;
             }
-            #page2 {
-                position: absolute;
-                top: 175%;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            #skillsImages {
-                width: 0;
-                height: 0;
-            }
         </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
         <script src="./backgroundScene.js"></script>
-        <script src="skillsAnimation.js"></script>
+        <script src="indexOrbitingThings.js"></script>
         <script>
             function pageTransition(pageTo){
                 var bodyDiv = document.getElementById("bodyDiv");
