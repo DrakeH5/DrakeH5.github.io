@@ -6,9 +6,33 @@
         <div id="bodyDiv">
 
             <div id="taskbarDiv">
-                <button>🏠</button>
-                <button onclick="pageTransition('./projects.html')"><i class="fa fa-gear fa-spin"></i></button>
-                <button>📧</button>
+
+                <div>
+                    <img src="logo2.png" height="100%" />
+                </div>
+
+                <button type="button" class="btn" onclick="pageTransition('./projects.html')">
+                    <strong>Projects</strong>
+                    <div id="container-stars">
+                      <div id="stars"></div>
+                    </div>
+                  
+                    <div id="glow">
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                    </div>
+                  </button>
+                  <button type="button" class="btn" onclick="pageTransition('./projects.html')">
+                    <strong>📧</strong>
+                    <div id="container-stars">
+                      <div id="stars"></div>
+                    </div>
+                  
+                    <div id="glow">
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                    </div>
+                  </button>
             </div>
 
             <div>
@@ -21,6 +45,7 @@
 
         </div>
         
+        <link rel="stylesheet" href="spaceBtn.css">
         <style>
             body {
                 background-color: black;
@@ -28,21 +53,13 @@
                 height: 1000%
             }
             #taskbarDiv {
-                background-color: rgb(28, 26, 26);
+                background-color: rgb(4, 4, 4);
                 padding: 1em;
                 display: flex;
                 justify-content: space-between;
                 position: fixed;
-                width: 100%;
-            }
-            button {
-                opacity: 0.3;
-                background-color: black;
-                color: white;
-                font-size: 3vw;
-                width: 100%;
-                margin-left: 1%;
-                margin-right: 1%;
+                width: 98%;
+                height: 5%;
             }
             h1, h2, h3, p {
                 color: white
