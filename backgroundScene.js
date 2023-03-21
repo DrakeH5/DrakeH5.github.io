@@ -51,9 +51,9 @@ render();
 var loadAnimationDone = false;
 
 this.tl = new TimelineMax().delay(0.3); //creates a new timeline with a delay of 0.3 seconds (the delay is so it doesn't look jaggy)
-this.tl.to(this.mesh.scale, 1, {y: 2, ease: Expo.easeOut}); //using the timeline, we scale our box over 1 second on the y axis (width) by 2. We also make it an exponintial ease out so it does it gradualy
-this.tl.to(this.mesh.position, 2, {z: -3, ease: Expo.easeOut}); //using the timeline, we move our box over 2 second on the z axis by -3. We also make it an exponintial ease out so it does it gradualy
-this.tl.to(this.mesh.rotation, 3, {x: 45, ease: Expo.easeOut}); //using the timeline, we rotate our box over 3 second on the x axis by 45 degrees. We also make it an exponintial ease out so it does it gradualy
+this.tl.to(this.mesh.scale, 0.5, {y: 2, ease: Expo.easeOut}); //using the timeline, we scale our box over 1 second on the y axis (width) by 2. We also make it an exponintial ease out so it does it gradualy
+this.tl.to(this.mesh.position, 1, {z: -3, ease: Expo.easeOut}); //using the timeline, we move our box over 2 second on the z axis by -3. We also make it an exponintial ease out so it does it gradualy
+this.tl.to(this.mesh.rotation, 1.5, {x: 45, ease: Expo.easeOut}); //using the timeline, we rotate our box over 3 second on the x axis by 45 degrees. We also make it an exponintial ease out so it does it gradualy
 setInterval(function(){loadAnimationDone=true;},6300)
 
 /*document.body.onwheel = function(evt) {
