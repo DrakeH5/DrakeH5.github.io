@@ -8,10 +8,19 @@ scene.add(sphere);
 
 
 
+var ortibals = []
+
 var orbitalGeometry = new THREE.BoxGeometry(5, 3, 1);
 var orbital1 = new THREE.Mesh(orbitalGeometry, new THREE.MeshLambertMaterial({color: "blue"}));
 scene.add(orbital1); 
+ortibals.push(orbital1)
 orbital1.position.y = -10000;
+
+var orbitalGeometry = new THREE.BoxGeometry(5, 3, 1);
+var orbital2 = new THREE.Mesh(orbitalGeometry, new THREE.MeshLambertMaterial({color: "red"}));
+scene.add(orbital2); 
+ortibals.push(orbital2)
+orbital2.position.y = -10000;
 
 
 
@@ -32,5 +41,8 @@ document.onscroll = function(){
         overScroll += window.pageYOffset - prevScroll;
     }
     prevScroll = window.pageYOffset;
-    orbital1.position.set(-8*Math.sin(window.pageYOffset/1000), sphere.position.y, -8*Math.cos(window.pageYOffset/1000) - 10)
+    for(var i=1; i<=ortibals.length; i++){
+        var theata = (i/ortibals.length);
+        ortibals[i-1].position.set(-8*Math.sin((window.pageYOffset/1000)*theata), sphere.position.y, -8*Math.cos((window.pageYOffset/1000)*theata) - 10)
+    }
 }
