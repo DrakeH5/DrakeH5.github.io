@@ -8,23 +8,6 @@ scene.add(sphere);
 
 
 
-var ortibals = []
-
-var orbitalGeometry = new THREE.BoxGeometry(5, 3, 1);
-var orbital1 = new THREE.Mesh(orbitalGeometry, new THREE.MeshLambertMaterial({color: "blue"}));
-scene.add(orbital1); 
-ortibals.push(orbital1)
-orbital1.position.y = -10000;
-
-var orbitalGeometry = new THREE.BoxGeometry(5, 3, 1);
-var orbital2 = new THREE.Mesh(orbitalGeometry, new THREE.MeshLambertMaterial({color: "red"}));
-scene.add(orbital2); 
-ortibals.push(orbital2)
-orbital2.position.y = -10000;
-
-
-
-
 var prevScroll = 0;
 var overScroll = 0;
 document.onscroll = function(){
