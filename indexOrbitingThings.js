@@ -12,8 +12,8 @@ var prevScroll = 0;
 var overScroll = 0;
 document.onscroll = function(){
     sphere.rotation.y-=(window.pageYOffset - prevScroll )/500
-    if(sphere.position.y < 0 || prevScroll - window.pageYOffset > 0){
-        if(overScroll < 1){
+    if(sphere.position.y < 0 || prevScroll - window.pageYOffset > 0 || window.pageYOffset > 9000){
+        if(overScroll < 1 || window.pageYOffset > 9000){
             sphere.position.y+=(window.pageYOffset - prevScroll )/200
             mesh.rotation.z=-window.pageYOffset/1000
             mesh.position.y+=(window.pageYOffset - prevScroll)/300
