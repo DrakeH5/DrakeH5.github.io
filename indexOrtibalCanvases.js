@@ -59,26 +59,26 @@ orbital3Ctx.font = "20px Arial";
 orbital3Ctx.fillText("Click for Info", 5, 120);
 //info
 const orbital3InfoCanvas = document.createElement( 'canvas' );
-orbital3InfoCanvas.width = 256;
-orbital3InfoCanvas.height = 128;
+orbital3InfoCanvas.width = 256*2;
+orbital3InfoCanvas.height = 128*2;
 const orbital3InfoCtx = orbital3InfoCanvas.getContext( '2d' );
 orbital3InfoCtx.fillStyle = '#161b22';
-orbital3InfoCtx.fillRect( 0, 0, 256, 128);
+orbital3InfoCtx.fillRect( 0, 0, 256*2, 128*2);
 orbital3InfoCtx.fillStyle = 'red';
-orbital3InfoCtx.font = "30px Times New Roman";
-orbital3InfoCtx.fillText("Created and Taught", 10, 40);
+orbital3InfoCtx.font = "60px Times New Roman";
+orbital3InfoCtx.fillText("Created and Taught", 10*2, 40*2);
 orbital3InfoCtx.fillStyle = 'lightgreen';
-orbital3InfoCtx.font = "20px Arial";
-orbital3InfoCtx.fillText("a unique curriculum of", 30, 60);
+orbital3InfoCtx.font = "40px Arial";
+orbital3InfoCtx.fillText("a unique curriculum of", 30*2, 60*2);
 orbital3InfoCtx.fillStyle = 'dodgerblue';
-orbital3InfoCtx.font = "16px Comic Sans";
-orbital3InfoCtx.fillText("introductionary programing principles", 5, 75);
-orbital3InfoCtx.fillText("and game design/creation", 55, 90);
+orbital3InfoCtx.font = "32px Comic Sans";
+orbital3InfoCtx.fillText("introductionary programing principles", 5*2, 75*2);
+orbital3InfoCtx.fillText("and game design/creation", 55*2, 90*2);
 orbital3InfoCtx.fillStyle = 'gold';
-orbital3InfoCtx.fillText("over a 4 year period", 100, 120);
+orbital3InfoCtx.fillText("over a 4 year period", 100*2, 120*2);
 orbital3InfoCtx.fillStyle = 'white';
-orbital3InfoCtx.font = "20px Arial";
-orbital3InfoCtx.fillText("<-Back", 5, 120);
+orbital3InfoCtx.font = "40px Arial";
+orbital3InfoCtx.fillText("<-Back", 5*2, 120*2);
 ortibal3material = []
 ortibal3material.push(new THREE.MeshBasicMaterial({color: "grey"}))
 ortibal3material.push(new THREE.MeshBasicMaterial({color: "grey"}))
