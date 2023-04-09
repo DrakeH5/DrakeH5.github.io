@@ -42,6 +42,27 @@ var orbital2 = new THREE.Mesh(orbitalGeometry, new THREE.MeshBasicMaterial({map:
 ortibals.push(orbital2)
 
 
+
+const orbital3Canvas = document.createElement( 'canvas' );
+orbital3Canvas.width = 256;
+orbital3Canvas.height = 128;
+const orbital3Ctx = orbital3Canvas.getContext( '2d' );
+orbital3Ctx.fillStyle = '#161b22';
+orbital3Ctx.fillRect( 0, 0, 256, 128);
+var teachCodingImg = document.getElementById("teachCodingImg");
+orbital3Ctx.drawImage(teachCodingImg, 3, 3, 256, 128);
+orbital3Canvas.addEventListener('click', function() {alert("click")}, false);
+orbital3Ctx.fillStyle = 'white';
+orbital3Ctx.font = "30px Comics Sans";
+orbital3Ctx.fillText("Teacher", 5, 25);
+orbital3Ctx.fillStyle = 'orange';
+orbital3Ctx.font = "20px Arial";
+orbital3Ctx.fillText("Click for Info", 140, 120);
+var orbital3 = new THREE.Mesh(orbitalGeometry, new THREE.MeshBasicMaterial({map: new THREE.CanvasTexture( orbital3Canvas )}));
+ortibals.push(orbital3)
+
+
+
 for(var i=0; i<ortibals.length; i++){
     scene.add(ortibals[i])
     ortibals[i].position.y = -1000;
