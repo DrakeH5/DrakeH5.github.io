@@ -49,7 +49,7 @@ orbital3Canvas.height = 128;
 const orbital3Ctx = orbital3Canvas.getContext( '2d' );
 orbital3Ctx.fillStyle = '#161b22';
 orbital3Ctx.fillRect( 0, 0, 256, 128);
-var teachCodingImg = document.getElementById("teachCodingImg");
+var teachCodingImg = document.getElementById("teachCodingImg"); //replace with actual image
 orbital3Ctx.drawImage(teachCodingImg, 3, 3, 256, 128);
 orbital3Ctx.fillStyle = 'white';
 orbital3Ctx.font = "30px Comics Sans";
@@ -93,7 +93,8 @@ ortibals.push(orbital3)
 
 for(var i=0; i<ortibals.length; i++){
     scene.add(ortibals[i])
-    ortibals[i].position.y = -1000;
+	var theata = ((i)/ortibals.length);
+	ortibals[i].position.set(-8*Math.sin((window.pageYOffset/1000)*theata), -10000, -8*Math.cos((window.pageYOffset/1000)*theata) - 10)
 }
 
 

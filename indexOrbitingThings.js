@@ -25,7 +25,7 @@ document.onscroll = function(){
     }
     prevScroll = window.pageYOffset;
     for(var i=1; i<=ortibals.length; i++){
-        var theata = (i/ortibals.length);
-        ortibals[i-1].position.set(-8*Math.sin((window.pageYOffset/1000)*theata), sphere.position.y, -8*Math.cos((window.pageYOffset/1000)*theata) - 10)
+        var theata = (2*Math.PI)*(i/ortibals.length);
+        ortibals[i-1].position.set(-8*Math.sin((window.pageYOffset/1000)+theata), sphere.position.y, -8*Math.cos((window.pageYOffset/1000)+theata) - 10)
     }
 }
