@@ -51,14 +51,42 @@ orbital3Ctx.fillStyle = '#161b22';
 orbital3Ctx.fillRect( 0, 0, 256, 128);
 var teachCodingImg = document.getElementById("teachCodingImg");
 orbital3Ctx.drawImage(teachCodingImg, 3, 3, 256, 128);
-orbital3Canvas.addEventListener('click', function() {alert("click")}, false);
 orbital3Ctx.fillStyle = 'white';
 orbital3Ctx.font = "30px Comics Sans";
 orbital3Ctx.fillText("Teacher", 5, 25);
-orbital3Ctx.fillStyle = 'orange';
+orbital3Ctx.fillStyle = 'white';
 orbital3Ctx.font = "20px Arial";
-orbital3Ctx.fillText("Click for Info", 140, 120);
-var orbital3 = new THREE.Mesh(orbitalGeometry, new THREE.MeshBasicMaterial({map: new THREE.CanvasTexture( orbital3Canvas )}));
+orbital3Ctx.fillText("Click for Info", 5, 120);
+//info
+const orbital3InfoCanvas = document.createElement( 'canvas' );
+orbital3InfoCanvas.width = 256;
+orbital3InfoCanvas.height = 128;
+const orbital3InfoCtx = orbital3InfoCanvas.getContext( '2d' );
+orbital3InfoCtx.fillStyle = '#161b22';
+orbital3InfoCtx.fillRect( 0, 0, 256, 128);
+orbital3InfoCtx.fillStyle = 'red';
+orbital3InfoCtx.font = "30px Times New Roman";
+orbital3InfoCtx.fillText("Created and Taught", 10, 40);
+orbital3InfoCtx.fillStyle = 'lightgreen';
+orbital3InfoCtx.font = "20px Arial";
+orbital3InfoCtx.fillText("a unique curriculum of", 30, 60);
+orbital3InfoCtx.fillStyle = 'dodgerblue';
+orbital3InfoCtx.font = "16px Comic Sans";
+orbital3InfoCtx.fillText("introductionary programing principles", 5, 75);
+orbital3InfoCtx.fillText("and game design/creation", 55, 90);
+orbital3InfoCtx.fillStyle = 'gold';
+orbital3InfoCtx.fillText("over a 4 year period", 100, 120);
+orbital3InfoCtx.fillStyle = 'white';
+orbital3InfoCtx.font = "20px Arial";
+orbital3InfoCtx.fillText("<-Back", 5, 120);
+ortibal3material = []
+ortibal3material.push(new THREE.MeshBasicMaterial({color: "grey"}))
+ortibal3material.push(new THREE.MeshBasicMaterial({color: "grey"}))
+ortibal3material.push(new THREE.MeshBasicMaterial({color: "grey"}))
+ortibal3material.push(new THREE.MeshBasicMaterial({color: "grey"}))
+ortibal3material.push(new THREE.MeshBasicMaterial({map: new THREE.CanvasTexture( orbital3Canvas )}))
+ortibal3material.push(new THREE.MeshBasicMaterial({map: new THREE.CanvasTexture( orbital3InfoCanvas )}))
+var orbital3 = new THREE.Mesh(orbitalGeometry, ortibal3material);
 ortibals.push(orbital3)
 
 
@@ -69,6 +97,8 @@ for(var i=0; i<ortibals.length; i++){
 }
 
 
+
+var ortibal3Rotated = false;
 
 raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
@@ -81,6 +111,24 @@ function onMouseDown(event) {
 				if ( intersects.length > 0 ) {
 					if ( orbital2 == intersects[ 0 ].object ) {
 						window.open("https://github.com/DrakeH5");
+					} else if(orbital3 == intersects[ 0 ].object){
+						if(ortibal3Rotated){
+							this.tl = new TimelineMax().delay(0.3);
+							this.tl.to(orbital3.rotation, 1, {x: -6, ease: Expo.easeOut});
+							this.tl.to(orbital3.scale, 0.5, {x: 1, ease: Expo.easeOut});
+							this.tl.to(orbital3.scale, 0.5, {y: 1, ease: Expo.easeOut});
+							this.tl.to(orbital3.rotation, 1, {z: 0, ease: Expo.easeOut});
+							this.tl.to(camera.position, 1, {z: 5, ease: Expo.easeOut});
+							ortibal3Rotated = false;
+						} else {
+							this.tl = new TimelineMax().delay(0.3);
+							this.tl.to(orbital3.rotation, 1, {x: -3, ease: Expo.easeOut});
+							this.tl.to(orbital3.rotation, 1, {z: -3.15, ease: Expo.easeOut});
+							this.tl.to(orbital3.scale, 0.5, {x: 3, ease: Expo.easeOut});
+							this.tl.to(orbital3.scale, 0.5, {y: 3, ease: Expo.easeOut});
+							this.tl.to(camera.position, 1, {z: 20, ease: Expo.easeOut});
+							ortibal3Rotated = true;
+						}
 					}
 				}
 }
