@@ -29,3 +29,17 @@ document.onscroll = function(){
         ortibals[i-1].position.set(-8*Math.sin((window.pageYOffset/1000)+theata), sphere.position.y, -8*Math.cos((window.pageYOffset/1000)+theata) - 10)
     }
 }
+
+
+import { glTFLoader } from 'https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js';
+const loader = new glTFLoader();
+
+loader.load( 'sputnik.glb', function ( gltf ) {
+
+	scene.add( gltf.scene );
+
+}, undefined, function ( error ) {
+
+	console.error( error );
+
+} );
