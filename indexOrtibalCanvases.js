@@ -47,13 +47,12 @@ const orbital3Canvas = document.createElement( 'canvas' );
 orbital3Canvas.width = 256;
 orbital3Canvas.height = 128;
 const orbital3Ctx = orbital3Canvas.getContext( '2d' );
-orbital3Ctx.fillStyle = '#161b22';
+orbital3Ctx.fillStyle = "black";
 orbital3Ctx.fillRect( 0, 0, 256, 128);
-var teachCodingImg = document.getElementById("teachCodingImg"); //replace with actual image
-orbital3Ctx.drawImage(teachCodingImg, 3, 3, 256, 128);
-orbital3Ctx.fillStyle = 'white';
-orbital3Ctx.font = "30px Comics Sans";
-orbital3Ctx.fillText("Teacher", 5, 25);
+orbital3Ctx.fillStyle = 'rgb(3, 160, 98)';
+orbital3Ctx.font = "30px Times New Roman";
+orbital3Ctx.fillText("Work", 5, 35);
+orbital3Ctx.fillText("Experience", 100, 75);
 orbital3Ctx.fillStyle = 'white';
 orbital3Ctx.font = "20px Arial";
 orbital3Ctx.fillText("Click for Info", 5, 120);
