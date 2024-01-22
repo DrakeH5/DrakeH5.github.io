@@ -19,34 +19,35 @@ window.addEventListener('resize', () => { //when the page is resized
 })
 
 
-window.onload = function() {
  
  var numberOfProjects = materials.length
  var radius = 40;
- for(var i=0; i<numberOfProjects; i++){
-     var geometry = new THREE.BoxGeometry(6, 10, 6); //creates box (width, height, depth)
-     var mesh = new THREE.Mesh(geometry, materials[i]); //creates a mesh out of our box and material
-     var theta = ((i+1)/(numberOfProjects+2))*360;
-     xPos = radius*Math.cos(theta);
-     zPos = radius*Math.sin(theta)
-     mesh.position.set(xPos, 1, zPos);
-     scene.add(mesh); //adds our mesh to the scene
-     //platform below
-     var groundPlatform = new THREE.Mesh(new THREE.CylinderGeometry(7, 7, 1, 32), new THREE.MeshPhongMaterial({color: "#53565A"})); 
-     groundPlatform.position.set(xPos, -5, zPos)
-     scene.add(groundPlatform);
-     var groundPlatformRing = new THREE.Mesh(new THREE.CylinderGeometry(7.1, 7.1, 1, 32), new THREE.MeshPhongMaterial({color: "dodgerblue"})); 
-     groundPlatformRing.position.set(xPos, -5.1, zPos)
-     scene.add(groundPlatformRing);
-     /*var platformThruster = new THREE.Mesh(new THREE.CylinderGeometry(3, 3, 4, 32), new THREE.MeshPhongMaterial({color: "dodgerblue"})); 
-     platformThruster.position.set(xPos, -6, zPos)
-     scene.add(platformThruster);*/
-     const light = new THREE.PointLight( 0xffffbb, 3, 100 );
-     light.position.set(xPos, -6, zPos)
-     scene.add( light ); 
- }
 
-}
+ window.addEventListener("load",function() {
+    for(var i=0; i<numberOfProjects; i++){
+        var geometry = new THREE.BoxGeometry(6, 10, 6); //creates box (width, height, depth)
+        var mesh = new THREE.Mesh(geometry, materials[i]); //creates a mesh out of our box and material
+        var theta = ((i+1)/(numberOfProjects+2))*360;
+        xPos = radius*Math.cos(theta);
+        zPos = radius*Math.sin(theta)
+        mesh.position.set(xPos, 1, zPos);
+        scene.add(mesh); //adds our mesh to the scene
+        //platform below
+        var groundPlatform = new THREE.Mesh(new THREE.CylinderGeometry(7, 7, 1, 32), new THREE.MeshPhongMaterial({color: "#53565A"})); 
+        groundPlatform.position.set(xPos, -5, zPos)
+        scene.add(groundPlatform);
+        var groundPlatformRing = new THREE.Mesh(new THREE.CylinderGeometry(7.1, 7.1, 1, 32), new THREE.MeshPhongMaterial({color: "dodgerblue"})); 
+        groundPlatformRing.position.set(xPos, -5.1, zPos)
+        scene.add(groundPlatformRing);
+        /*var platformThruster = new THREE.Mesh(new THREE.CylinderGeometry(3, 3, 4, 32), new THREE.MeshPhongMaterial({color: "dodgerblue"})); 
+        platformThruster.position.set(xPos, -6, zPos)
+        scene.add(platformThruster);*/
+        const light = new THREE.PointLight( 0xffffbb, 3, 100 );
+        light.position.set(xPos, -6, zPos)
+        scene.add( light ); 
+    }
+
+},false)
 
 
 

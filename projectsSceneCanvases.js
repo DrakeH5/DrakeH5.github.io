@@ -1,6 +1,6 @@
 
 var material1 = new THREE.MeshBasicMaterial();
-window.onload = function() {
+window.addEventListener("load",function() {
   const project1Canvas = document.getElementById( 'canvas1' );
   const project1CanvasCtx = project1Canvas.getContext( '2d' );
   project1CanvasCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
@@ -11,10 +11,10 @@ window.onload = function() {
   project1CanvasCtx.fillText("Enigma Machine", 0, 14);
   project1CanvasCtx.drawImage(document.getElementById("enigmaMachineImg"), 0, 20, 64, 60);
   material1.map = new THREE.CanvasTexture( project1Canvas );
-}
+}, false)
   
 var material2 = new THREE.MeshBasicMaterial();
-window.onload = function() {
+window.addEventListener("load",function() {
   const project2Canvas = document.getElementById( 'canvas2' );
   const project2CanvasCtx = project2Canvas.getContext( '2d' );
   project2CanvasCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
@@ -26,11 +26,11 @@ window.onload = function() {
   project2CanvasCtx.fillText("Embeddings", 2, 20);
   project2CanvasCtx.drawImage(document.getElementById("GloveImg"), 0, 26, 60, 60);
   material2.map = new THREE.CanvasTexture( project2Canvas );
-}
+}, false)
 
   
 var material3 = new THREE.MeshBasicMaterial();
-window.onload = function() {
+window.addEventListener("load",function() {
   const project3Canvas = document.getElementById( 'canvas3' );
   const project3CanvasCtx = project3Canvas.getContext( '2d' );
   project3CanvasCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
@@ -43,11 +43,11 @@ window.onload = function() {
   project3CanvasCtx.fillText("Algorithm", 2, 12);
   project3CanvasCtx.drawImage(document.getElementById("sortingAlgoPic"), 0, 12, 40, 20);
   material3.map = new THREE.CanvasTexture( project3Canvas );
-}
+}, false)
   
   
 var material4 = new THREE.MeshBasicMaterial();
-window.onload = function() {
+window.addEventListener("load",function() {
   const project4Canvas = document.getElementById( 'canvas4' );
   const project4CanvasCtx = project4Canvas.getContext( '2d' );
   project4CanvasCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
@@ -59,12 +59,12 @@ window.onload = function() {
   project4CanvasCtx.fillText("Minecraft Clone", 1, 6);
   project4CanvasCtx.drawImage(document.getElementById("minecraftPic"), 0, 10, 40, 40);
   material4.map = new THREE.CanvasTexture( project4Canvas );
-}
+}, false)
   
   
   
 var material5 = new THREE.MeshBasicMaterial();
-window.onload = function() {
+window.addEventListener("load",function() {
   const project5Canvas = document.getElementById( 'canvas5' );
   const project5CanvasCtx = project5Canvas.getContext( '2d' );
   project5CanvasCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
@@ -76,11 +76,11 @@ window.onload = function() {
   project5CanvasCtx.fillText("Chess Engine", 1, 6);
   project5CanvasCtx.drawImage(document.getElementById("chessEnginePic"), 0, 10, 40, 40);
   material5.map = new THREE.CanvasTexture( project5Canvas );
-}
+}, false)
   
   
 var material6 = new THREE.MeshBasicMaterial();
-window.onload = function() {
+window.addEventListener("load",function() {
   const project6Canvas = document.getElementById( 'canvas6' );
   const project6CanvasCtx = project6Canvas.getContext( '2d' );
   project6CanvasCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
@@ -92,8 +92,10 @@ window.onload = function() {
   project6CanvasCtx.fillText("Lifting Log", 4, 4);
   project6CanvasCtx.drawImage(document.getElementById("liftinglogPic"), 2.5, 5, 28, 28);
   material6.map = new THREE.CanvasTexture( project6Canvas );
-}
 
+  console.log("hey")
+
+}, false)
 
   
   
