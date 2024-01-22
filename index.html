@@ -9,10 +9,14 @@
             <div>
                 <div id="centerDiv"><center>
                     <h1>Drake Hughes</h1>
-                    <p>Cringy Description</p>
+                    <p>Coding Hobbyist</p>
                 </center></div>
                 
             </div>
+
+            <section id="section05" class="demo">
+                <a><span></span></a>
+              </section>
 
             <div id="optionsDiv">
 
@@ -31,7 +35,7 @@
                         <div class="circle"></div>
                         </div>
                     </button>
-                    <a href="mailto:Newbuild100@outlook.com">
+                    <a href="mailto:drakehughes5@outlook.com">
                         <button type="button" class="btn">
                             <strong>📧</strong>
                             <div id="container-stars">
@@ -84,6 +88,52 @@
                 position: fixed;
                 z-index: -1;
             }
+
+            #section05 a {
+                padding-top: 70px;
+            }
+            #section05 a span {
+                position: absolute;
+                top: 85vh;
+                left: 50%;
+                width: 24px;
+                height: 24px;
+                margin-left: -12px;
+                border-left: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                -webkit-animation: sdb05 1.5s infinite;
+                animation: sdb05 1.5s infinite;
+                box-sizing: border-box;
+            }
+            @-webkit-keyframes sdb05 {
+            0% {
+                -webkit-transform: rotate(-45deg) translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+                opacity: 0;
+            }
+            }
+            @keyframes sdb05 {
+            0% {
+                transform: rotate(-45deg) translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(-45deg) translate(-20px, 20px);
+                opacity: 0;
+            }
+            }
+            
         </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>

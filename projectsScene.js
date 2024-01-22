@@ -6,7 +6,7 @@ var camera = new THREE.PerspectiveCamera(55,window.innerWidth/window.innerHeight
 var renderer = new THREE.WebGLRenderer({antialias: true}); //create renderer
 renderer.setClearColor("lightblue"); //essentially a background color
 renderer.setSize(window.innerWidth,window.innerHeight); //set renderer size to size of the page
-
+ 
 
 document.body.appendChild(renderer.domElement); //creates a canvas with our render's specifications
 renderer.domElement.id = "threeJScanvas";
@@ -25,7 +25,7 @@ var radius = 40;
 for(var i=0; i<numberOfProjects; i++){
     var geometry = new THREE.BoxGeometry(6, 10, 6); //creates box (width, height, depth)
     var mesh = new THREE.Mesh(geometry, materials[i]); //creates a mesh out of our box and material
-    var theta = (i/numberOfProjects)*360;
+    var theta = ((i+1)/(numberOfProjects+2))*360;
     xPos = radius*Math.cos(theta);
     zPos = radius*Math.sin(theta)
     mesh.position.set(xPos, 1, zPos);
@@ -118,4 +118,34 @@ document.body.onmousemove = function(event) {
   if(mouseClicked==true){
     camera.rotation.y += event.movementX/(window.innerWidth/2)
   }
+}
+
+
+
+
+
+
+//clicking 
+document.addEventListener('mousedown', onMouseDown, false);
+
+function onMouseDown(e) {
+    var vectorMouse = new THREE.Vector3( //vector from camera to mouse
+        -(window.innerWidth/2-e.clientX)*2/window.innerWidth,
+        (window.innerHeight/2-e.clientY)*2/window.innerHeight,
+        -1/Math.tan((55/2)*Math.PI/180)); //55/2 is half of camera frustum angle 45 degree
+    vectorMouse.applyQuaternion(camera.quaternion);
+    vectorMouse.normalize();        
+
+    for(var i=0; i<numberOfProjects; i++){
+      var theta = (i/numberOfProjects)*360;
+      var vectorObject = new THREE.Vector3(); //vector from camera to object
+      vectorObject.set(radius*Math.cos(theta) - camera.position.x,
+                      1 - camera.position.y,
+                      radius*Math.sin(theta) - camera.position.z);
+      vectorObject.normalize();
+      if (vectorMouse.angleTo(vectorObject)*180/Math.PI < 10) {
+          console.log("project " + i)
+          window.open(links[i], '_blank');
+      }
+    }
 }

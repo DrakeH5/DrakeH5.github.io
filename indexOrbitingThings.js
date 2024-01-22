@@ -30,7 +30,7 @@ document.onscroll = function(){
     }
 }
 
-
+/*
 import { glTFLoader } from 'https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js';
 const loader = new glTFLoader();
 
@@ -42,4 +42,4 @@ loader.load( 'sputnik.glb', function ( gltf ) {
 
 	console.error( error );
 
-} );
+} ); */
