@@ -137,7 +137,7 @@ function onMouseDown(e) {
     vectorMouse.normalize();        
 
     for(var i=0; i<numberOfProjects; i++){
-      var theta = (i/numberOfProjects)*360;
+      var theta = ((i+1)/(numberOfProjects+2))*360;
       var vectorObject = new THREE.Vector3(); //vector from camera to object
       vectorObject.set(radius*Math.cos(theta) - camera.position.x,
                       1 - camera.position.y,
